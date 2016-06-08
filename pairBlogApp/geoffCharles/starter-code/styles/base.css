@@ -27,10 +27,19 @@ address {
 
 a, a:link, a:active {
   color: #777;
+  text-decoration: none;
 }
 
 a:hover, a:focus {
 }
 
 a:visited {
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  margin-left: 0;
 }
