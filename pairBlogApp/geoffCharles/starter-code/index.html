@@ -18,6 +18,7 @@
     <nav class="main-nav">
       <ul>
         <!-- TODO: Use one of the icons from the available set for each of these nav items... -->
+
         <li class="tab" data-content="articles"><a href="#"> Home</a></li>
         <li class="tab" data-content="about"><a href="#"> About</a></li>
         <li><a href="http://twitter.com/brookr" target="_blank"> Twitter</a></li>
@@ -27,7 +28,7 @@
     <main>
       <section id="articles" class="tab-content">
         <div>
-          <ul id="filters">
+          <ul id="filters"> <!-- Here are the filter dropdowns, we'll be dynamically adding options to them in the JS. Specifically in articleView. -->
             <li>
               <select id="author-filter">
                 <option value="">-- Filter by Authors --</option>
@@ -40,8 +41,8 @@
             </li>
           </ul>
         </div>
-        <article class="template template" data-category="cat">
-          <header>
+        <article class="template template" data-category="cat"> <!-- Our old pal the template is up above the header at the bottom of the page. Now it has two copies of the template class, to make sure it never forgets what it is. -->
+          <header> <!-- Here's a new header, located at the traditional place: the bottom of the page -->
             <h1>Title</h1>
             <div class="byline">
               By <address><a href="">Author Name</a></address>
@@ -73,6 +74,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/article.js"></script>
-    <!-- TODO: Link up the new js file that will manage the article "View". -->
+    <!-- DONE: Link up the new js file that will manage the article "View". -->
+    <script src="scripts/articleView.js"></script>
   </body>
 </html>
