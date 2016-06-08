@@ -3,7 +3,8 @@ var rawProjects = {
   name: 'keepTouch',
   date: '2015-11-05',
   img:  'url',
-  desc: 'description goes here.'
+  desc: 'description goes here.',
+  repo: 'url'
   },
   {
   name: 'pizza3001',
