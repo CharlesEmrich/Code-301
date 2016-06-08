@@ -28,20 +28,21 @@ articleView.populateFilters = function() { //This adds a populateFilters method 
 
 articleView.handleAuthorFilter = function() { //We add another method to the articleView object
   $('#author-filter').on('change', function() { //This one listens for changes to the author-filter IDed tag
+    var $allArticles = $('article');
     if ($(this).val()) { //jQ(this) here refers to the option selected. Probably? We'll SAND.
-      // TODO: If the select box was changed to an option that has a value, we need to hide all the articles,
+      // DONE: If the select box was changed to an option that has a value, we need to hide all the articles,
       //       and then show just the ones that match for the author that was selected.
       //       Use an "attribute selector" to find those articles, and fade them in for the reader.
       console.log($(this).val());
-      var $allArticles = $('article');
       //Hide stuff
       $allArticles.hide();
       //Show Filtered Stuff
       $allArticles.filter('[data-author = \'' + $(this).val() + '\']').fadeIn();
     } else {
-      // TODO: If the select box was changed to an option that is blank, we should
+      // DONE: If the select box was changed to an option that is blank, we should
       //       show all the articles, except the one article we are using as a template.
-
+      // $allArticles.filter(':not(.template)').show();
+      $allArticles.filter(':not(.template)').show();
     }
     $('#category-filter').val('');
   });
@@ -52,7 +53,18 @@ articleView.handleCategoryFilter = function() {
   //       When an option with a value is selected, hide all the articles, then reveal the matches.
   //       When the blank (default) option is selected, show all the articles, except for the template.
   //       Be sure to reset the #author-filter while you are at it!
-
+  $('#category-filter').on('change', function() { //This one listens for changes to the author-filter IDed tag
+    var $allArticles = $('article');
+    if ($(this).val()) { //jQ(this) here refers to the option selected. Probably? We'll SAND.
+            //Hide stuff
+      $allArticles.hide();
+      //Show Filtered Stuff
+      $allArticles.filter('[data-category = \'' + $(this).val() + '\']').fadeIn();
+    } else {
+      $allArticles.filter(':not(.template)').show();
+    }
+    $('#author-filter').val('');
+  });
 };
 
 articleView.handleMainNav = function() {
@@ -81,4 +93,5 @@ articleView.setTeasers = function() {
 $(document).ready(function() {
   articleView.populateFilters();
   articleView.handleAuthorFilter();
+  articleView.handleCategoryFilter();
 });
