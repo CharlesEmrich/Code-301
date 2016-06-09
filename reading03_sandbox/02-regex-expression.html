@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Minimal jQuery Template with Regex</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+
+  <script id="hello" type="text/template"> <!-- the template begins -->
+    Hello {{0}}, my name is {{1}}, and I like {{2}} <!-- this one has handlebars in it that provide spaces for the replacement of content -->
+  </script>
+</head>
+<body>
+  <div id="app"></div> <!-- here's where that template will end up in the long run -->
+  <script>
+    var compile = function(template, expressions) //we're defining the compile() function here. It takes the template above and a set of expressions that define the way in which it'll replace content as params
+      return appTemplate.replace(/{{(\d+)}}/g, swapper); //Here's the regex that defines how compile() will know what pieces of the template get replaced when the template is compiled.
+      // where
+      function swapper(match, number) { //some part of line 17 needs to define that what we're doing is swapping, and swapping according to the rule defined here.
+        return expressions[number]; //I'm still a little confused by the 'matches' param. Best guess, swapper uses that param to define conditions for swapping. number param is a local var that refers to an index in the input object.
+      };
+    };
+    var appTemplate = $('#hello').html() //defines the appTemplate var, which is fed into compile()
+    var compiledTemplate = compile(appTemplate, ["Students", "Ivan", "Apples"]); //creates a DOM object using compile.
+    $('#app').append(compiledTemplate); //and appends it.
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handlebars Template</title>
+  <script id="hello" type="text/x-handlebars-template"> <!-- now we have a handlebars template, tucked up into the head above the CDN link -->
+    Hello {{who}}, my name is {{name}}, and I like {{what}}
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+<!-- up above, we bring in the CDN for Handlebars.js -->
+
+
+  <script>
+    var data = { // here's the replacement object for the template
+      who: "Students",
+      name: "Ivan",
+      what: "Apples"
+    };
+    var appTemplate = $('#hello').html()
+    var compiledTemplate = Handlebars.compile(appTemplate); //Now, rather than defining our own compile() function, we're actually just going to call Handlebars' built-in one.Notably, this returns a function, which means...
+    var html = compiledTemplate(data); // ... that we'll invoke compiledTemplate() with the replacement data object as an argument.
+    $('#app').append(html); //then we append the result.
+  </script>
+
+</body>
+</html>

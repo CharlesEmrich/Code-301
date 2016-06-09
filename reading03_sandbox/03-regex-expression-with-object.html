@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Minimal jQuery Template with words</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+
+  <script id="hello" type="text/template">
+    Hello {{who}}, my name is {{name}}, and I like {{what}} <!-- template again, now with more semantically useful replacement tags -->
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    var data = { //defining the key-value pairs for substitution.
+      who: "Students",
+      name: "Ivan",
+      what: "Apples"
+    };
+    var compile = function(template, expressions) { //compile() function again
+      return appTemplate.replace(/{{([A-Za-z]+)}}/g, swapper); //now looks for alpha strings.
+      // where
+      function swapper(match, capture) { //serves same purpose as in previous exmaple
+        return expressions[capture];
+      };
+    };
+    var appTemplate = $('#hello').html() //in fact a lot of this stuff remains the same.
+    var compiledTemplate = compile(appTemplate, data);
+    $('#app').append(compiledTemplate);
+  </script>
+
+</body>
+</html>
