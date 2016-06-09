@@ -37,6 +37,9 @@ articleView.handleAuthorFilter = function() { //We add another method to the art
       //Hide stuff
       $allArticles.hide();
       //Show Filtered Stuff
+
+      // STICKING POINT: Nailing down the attribute filter construction. We left off the .fadeIn,
+      //  we put super simple hard coded values in, and eventually landed on the string concatonation.
       $allArticles.filter('[data-author = \'' + $(this).val() + '\']').fadeIn();
     } else {
       // DONE: If the select box was changed to an option that is blank, we should
@@ -49,7 +52,7 @@ articleView.handleAuthorFilter = function() { //We add another method to the art
 };
 
 articleView.handleCategoryFilter = function() {
-  // TODO: Just like we do for #author-filter above, we should handle change events on the #category-filter element.
+  // DONE: Just like we do for #author-filter above, we should handle change events on the #category-filter element.
   //       When an option with a value is selected, hide all the articles, then reveal the matches.
   //       When the blank (default) option is selected, show all the articles, except for the template.
   //       Be sure to reset the #author-filter while you are at it!
@@ -68,12 +71,22 @@ articleView.handleCategoryFilter = function() {
 };
 
 articleView.handleMainNav = function() {
-  // TODO: Add an event handler to .main-nav element that will power the Tabs feature.
+  // DONE: Add an event handler to .main-nav element that will power the Tabs feature.
   //       Clicking any .tab element should hide all the .tab-content sections, and then reveal the
   //       single .tab-content section that is associated with the clicked .tab element.
   //       So: You need to dynamically build a selector string with the correct ID, based on the
   //       data available to you on the .tab element that was clicked.
-  $('.main-nav').on(/* CODE GOES HERE */);
+
+  // STICKING POINT: We tried a wide variety of selectors to try to isolate the value
+  //  of 'data-category', including filtering inside the function, looking through the 'this'
+  //  and 'event.target' values, even trying renaming data-content to try accessing it more easily.
+  $('.main-nav').on('click', '.tab', function() {
+    var activeTab = $(this).data('content');
+    // hide all .tab-content sections
+    $('.tab-content').hide();
+    // reveal the single .tab-content section that is associated with the clicked .tab element.
+    $('.tab-content').filter('[id=' + activeTab + ']').fadeIn('slow');
+  });
 
   $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
 };
@@ -81,17 +94,24 @@ articleView.handleMainNav = function() {
 articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide(); // Hide elements beyond the first 2 in any artcile body.
 
-  // TODO: Add an event handler to reveal all the hidden elements,
+  // DONE: Add an event handler to reveal all the hidden elements,
   //       when the .read-on link is clicked. You can go ahead and hide the
   //       "Read On" link once it has been clicked. Be sure to prevent the default link-click action!
   //       Ideally, we'd attach this as just 1 event handler on the #articles section, and let it
   //       process any .read-on clicks that happen within child nodes.
-
+  $('.read-on').on('click', function() {
+    event.preventDefault();
+    // STICKING POINT: Tried several different filters and traversals before landing on prev -> children.
+    $(this).prev().children().show();
+    $(this).hide();
+  });
 };
 
-// TODO: Call all of the above functions, once we are sure the DOM is ready.
+// DONE: Call all of the above functions, once we are sure the DOM is ready.
 $(document).ready(function() {
   articleView.populateFilters();
   articleView.handleAuthorFilter();
   articleView.handleCategoryFilter();
+  articleView.handleMainNav();
+  articleView.setTeasers();
 });

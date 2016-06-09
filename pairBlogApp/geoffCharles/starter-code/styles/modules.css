@@ -1,13 +1,21 @@
 /* TODO: Give the site header a nice background color, from your selected color scheme. */
+/* fcf7f8-ced3dc-aba9c3-275dad-5b616a */
 
 .site-header {
-  padding: .1em;
+  padding: .5em;
+  background-color: #275dad;
+  color: #ced3dc;
 }
 
 .main-nav {
   padding: 0;
   list-style: none;
   clear: both;
+  background-color: #5b616a;
+}
+
+.main-nav a {
+  color: #ced3dc;
 }
 
 .main-nav li {
@@ -17,16 +25,30 @@
   border-bottom: 1px solid #ccc;
 }
 
-/* TODO: Style the filters so they look good on small screens:
+/* DONE: Style the filters so they look good on small screens:
     Use the full width, and remove the list bullet. */
 
 #filters {
   padding: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+}
+
+#filters li{
+  width: 45%;
 }
 
 #filters select {
-
+  width: 100%;
+  background-color: #ccc;
 }
+
+/* This killed responsiveness. No time to fix.
+#articles {
+  padding: 1em;
+}*/
 
 .template {
   display: none;
