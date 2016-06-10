@@ -13,7 +13,7 @@
 <div class="divBlock">
 <h3>Raw markdown w/ content. Edit this!</h3>
 <!-- Pre-load text area with "marked down" content -->
-<textarea rows="20" cols="60" id="tBody" class="pCommon pRaw">
+<textarea rows="20" cols="60" id="tBody" class="pCommon pRaw"> <!-- here we're declaring the text area. The unit for rows is rows of text, but the unit for columns is in characters. Given the existence of non-monowidth fonts it's probably in characters of a certain monotype font at a certain scale. -->
 Plain text<br>
 _italics text_
 
@@ -61,7 +61,7 @@ Unordered list:
 <script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script src="vendor/js/highlight.min.js"></script>
 <script src="vendor/js/marked.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script>hljs.initHighlightingOnLoad();</script> <!-- Highlight.js needs to actually be called before it will begin highlighting syntax. If we moved this up a line, it would try to do it's task before marked had actually done its rendering tasks. If we moved it up another line, we'd be invoking an undefined function and just get an error. -->
 <script src="js/render.js"></script>
 
 </body>

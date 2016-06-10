@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"></meta>
+  <link rel="stylesheet" href="vendor/css/highlight_gruvbox-dark.css">
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <title>Markdown Demo</title>
+</head>
+
+<body>
+<h1>Markdown Demo</h1>
+
+
+<script src="http://code.jquery.com/jquery-2.2.3.min.js"></script>
+<script src="vendor/js/highlight.min.js"></script>
+<script src="vendor/js/marked.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> <!-- Highlight.js needs to actually be called before it will begin highlighting syntax. If we moved this up a line, it would try to do it's task before marked had actually done its rendering tasks. If we moved it up another line, we'd be invoking an undefined function and just get an error. -->
+<script src="js/render.js"></script>
+
+</body>
+</html>
