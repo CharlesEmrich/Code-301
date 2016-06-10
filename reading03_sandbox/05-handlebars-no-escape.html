@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handlebars Template</title>
+  <link rel="stylesheet" type="text/css" href="style-for-05.css">
+  <script id="hello" type="text/x-handlebars-template"> <!--template again -->
+    Hello {{who}}, my name is {{name}}, and I like {{what}}
+    <p><br></p>
+    <p><span class='label'>Double (i.e., normal): </span> {{puppy_double}}</p> <!-- Here are the typical double-{}'s -->'
+    <p><span class='label'>Triple (i.e., escaped):</span> {{{puppy_triple}}}</p> <!--but what's this? a typo?-->
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+  <script>
+    var data = {
+      who: "Students",
+      name: "Ivan",
+      what: "Apples",
+      puppy_double: "Here is bold text: <b>I'm bold!</b><br>",
+      puppy_triple: "Here is bold text: <b>I'm bold!</b><br>", //Nope! triple-{}'s cause Handlebars to actually parse rather than merely display HTML'
+    };
+    var appTemplate = $('#hello').html()
+    var compiledTemplate = Handlebars.compile(appTemplate);
+    var html = compiledTemplate(data);
+    $('#app').append(html);
+  </script>
+
+</body>
+</html>
