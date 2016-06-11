@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Handlebars Template</title>
+  <script id="hello" type="text/x-handlebars-template">
+    {{greeting}}, I'm a {{speaker}}.
+  </script>
+</head>
+<body>
+  <div id="salutation"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+
+  <script>
+    var data = { // here's the replacement object for the template
+      greeting: "What\'s up",
+      speaker:  "talking computer"
+    };
+    var appTemplate = $('#hello').html()
+    var compiledTemplate = Handlebars.compile(appTemplate);
+    var html = compiledTemplate(data);
+    $('#app').append(html);
+  </script>
+
+</body>
+</html>

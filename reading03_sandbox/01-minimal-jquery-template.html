@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minimal jQuery Template</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+
+  <script id="hello" type="text/template"> <!-- the template begins here, it's technically a block of script living in the HTML, but we've assigned it a type that'll prevent the browser from trying to run it. -->
+    Hello world <!-- This template is ultra-simple. So simple that it doesn't actually get anything passed into it. -->
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script> <!-- this is a tiny block of js. All it does is append the content described in the template to div IDed "app" -->
+    $('#app').append($('#hello').html()); <!-- specifically, it appends it using the .html() method, which will insert html in such a way that it is parsed. -->
+  </script>
+
+</body>
+</html>
