@@ -78,9 +78,9 @@ articleView.initNewArticlePage = function() {
   $('export-field').hide();
   $('#new-form').on('input', function(e) {
     articleView.create(e);
-});
+  });
 
-var articleTemplate = $('#article-template').html();
+  var articleTemplate = $('#article-template').html();
   articleView.compiledTemplate = Handlebars.compile(articleTemplate);
   // TODO: Add a 'focus' event to help the user select the entire JSON string,
   //       i.e., when a user clicks on the JSON string, make the browser select
@@ -91,7 +91,7 @@ var articleTemplate = $('#article-template').html();
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
   $('#article-json').focus(function() {
     // console.log('ping!');
-      $(this).select(); } );
+    $(this).select(); } );
 };
 
 articleView.create = function(e) {
@@ -99,12 +99,12 @@ articleView.create = function(e) {
   // Clear out the #articles element, so we can put in the updated preview
   field = e.target;
   articleView[field.name] = field.value;
-articleView['authorSlug'] = $('#article-author').val();
-articleView['categorySlug'] = $('#article-category').val();
+  articleView['authorSlug'] = $('#article-author').val();
+  articleView['categorySlug'] = $('#article-category').val();
 
 // articleView.body = marked(articleView.body);
 
-console.log(marked(articleView.body));
+  // console.log(marked(articleView.body));
 
   JSONarticle = JSON.stringify(articleView);
   $('#article-json').val(String(JSONarticle));
@@ -114,7 +114,7 @@ console.log(marked(articleView.body));
   //above^^^^
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
 
-var handleTemplate = articleView.compiledTemplate(articleView);
+  var handleTemplate = articleView.compiledTemplate(articleView);
 
   // TODO: Activate the highlighting of any code blocks:
 
@@ -126,7 +126,6 @@ var handleTemplate = articleView.compiledTemplate(articleView);
 
   //Above ^^^^
 };
-
 
 articleView.initIndexPage = function() {
   articleView.populateFilters();
