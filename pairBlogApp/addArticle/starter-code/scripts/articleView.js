@@ -70,15 +70,18 @@ articleView.initNewArticlePage = function() {
   //       keystroke), update the object and an area in the browser that shows the JSON
   //       version of that object.
   // TODO: Keep the JSON string hidden when the form is empty, but show the JSON string otherwise.
-  var newArticle = {};
+
+//Won't the string just always be empty when nothing is entered?
+
+  // var newArticle = {};
   var field, JSONarticle;
+  $('export-field').hide();
   $('#new-form').on('input', function(e) {
-    field = e.target;
-    newArticle[field.name] = field.value;
-    JSONarticle = JSON.stringify(newArticle);
-    $('#article-json').html(String(JSONarticle));
-    // console.log(JSON.stringify(newArticle));
-  });
+    articleView.create(e);
+});
+
+var articleTemplate = $('#article-template').html();
+  articleView.compiledTemplate = Handlebars.compile(articleTemplate);
   // TODO: Add a 'focus' event to help the user select the entire JSON string,
   //       i.e., when a user clicks on the JSON string, make the browser select
   //       the entire string so that the user can do the usual ctrl-C to copy
@@ -86,19 +89,42 @@ articleView.initNewArticlePage = function() {
   //       across a potentially very long string.)
   //
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
+  $('#article-json').focus(function() {
+    // console.log('ping!');
+      $(this).select(); } );
 };
 
-articleView.create = function() {
+articleView.create = function(e) {
   // TODO: Set up a var to hold the new article we are creating.
   // Clear out the #articles element, so we can put in the updated preview
+  field = e.target;
+  articleView[field.name] = field.value;
+articleView['authorSlug'] = $('#article-author').val();
+articleView['categorySlug'] = $('#article-category').val();
+
+// articleView.body = marked(articleView.body);
+
+console.log(marked(articleView.body));
+
+  JSONarticle = JSON.stringify(articleView);
+  $('#article-json').val(String(JSONarticle));
+  // console.log($('#article-author').val());
 
   // TODO: Instantiate an article based on what's in the form fields:
-
+  //above^^^^
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
+
+var handleTemplate = articleView.compiledTemplate(articleView);
 
   // TODO: Activate the highlighting of any code blocks:
 
+  $('.article-body').find('pre code').each(function(i, block) {
+    hljs.highlightBlock(block);
+  });
+
   // TODO: Export the new article as JSON, so it's ready to copy/paste into blogArticles.js:
+
+  //Above ^^^^
 };
 
 
