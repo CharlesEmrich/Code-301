@@ -63,19 +63,28 @@ articleView.setTeasers = function() {
 };
 
 articleView.initNewArticlePage = function() {
-  // TODO: Ensure the main .tab-content area is made visible. We may add more tabs later.
-
+  // TODO: DONE Ensure the main .tab-content area is made visible. We may add more tabs later.
+  $('.tab-content').hide();
+  $('#write').show();
   // TODO: Create an empty article object. As the author fills in the form (on each
   //       keystroke), update the object and an area in the browser that shows the JSON
   //       version of that object.
   // TODO: Keep the JSON string hidden when the form is empty, but show the JSON string otherwise.
-
+  var newArticle = {};
+  var field, JSONarticle;
+  $('#new-form').on('input', function(e) {
+    field = e.target;
+    newArticle[field.name] = field.value;
+    JSONarticle = JSON.stringify(newArticle);
+    $('#article-json').html(String(JSONarticle));
+    // console.log(JSON.stringify(newArticle));
+  });
   // TODO: Add a 'focus' event to help the user select the entire JSON string,
   //       i.e., when a user clicks on the JSON string, make the browser select
   //       the entire string so that the user can do the usual ctrl-C to copy
   //       the string. (This saves the user from needing to click-and-drag
   //       across a potentially very long string.)
-  // 
+  //
   // TODO: Add an event handler to update the preview and the export field if any inputs change.
 };
 
