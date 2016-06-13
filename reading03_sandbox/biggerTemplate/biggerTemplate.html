@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Handlebars Template</title>
+  <script id="hello" type="text/x-handlebars-template">
+    {{#list people}}{{firstName}} {{lastName}}{{/list}}
+  </script>
+</head>
+<body>
+  <div id="salutation"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+
+  <script>
+    var data = {
+  people: [
+    {firstName: "Yehuda", lastName: "Katz"},
+    {firstName: "Carl", lastName: "Lerche"},
+    {firstName: "Alan", lastName: "Johnson"}
+      ]
+    };
+
+    Handlebars.registerHelper('list', function(items, options) {
+  var out = "<ul>";
+
+  for(var i=0, l=items.length; i<l; i++) {
+    out = out + "<li>" + options.fn(items[i]) + "</li>";
+  }
+
+  return out + "</ul>";
+});
+
+    var appTemplate = $('#hello').html()
+    var compiledTemplate = Handlebars.compile(appTemplate);
+    var html = compiledTemplate(data);
+    $('#app').append(html);
+  </script>
+
+</body>
+</html>
