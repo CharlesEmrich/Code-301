@@ -21,3 +21,12 @@ Apply sort function to rawData per pair lab
 3. As a visitor, I want relative timestamps on projects to give me a idea of how many days ago something was created.
 
 We literally don't know how to do this kind of date math yet? Great!
+
+3rd Day User Stories
+
+1. As the creator, I want the Home and About nav links to act as tabs, so my story is revealed FAST.
+This means your links do NOT navigate to a new page.
+Instead, your "single page app" shows only the section related to the navigation tab that is selected.
+You can use data- HTML attributes to associate a content section with a particular tab
+2. Then use jQuery so when the tab is clicked, you hide all the sections, then reveal the associated section only.
+3. As a reader, I want the portfolio to use a nice color scheme, so that it stands out visually.
