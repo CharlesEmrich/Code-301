@@ -1,1 +1,64 @@
 /*Theme rules are similar to state rules in that they describe how modules or layouts might look. Most sites don’t require a layer of theming but it is good to be aware of it.*/
+* {
+  color: #C5D1EB;
+  text-decoration: none;
+}
+
+/*https://coolors.co/app/c5d1eb-92afd7-5a7684-395b50-1f2f16*/
+/*https://coolors.co/app/c5d1eb-92afd7-222222-f79256-1c5d99*/
+
+/* Central Color Choices */
+.opal {
+  background-color: #C5D1EB;
+}
+.sky {
+  background-color: #92AFD7;
+}
+
+.jet {
+  background-color: #222222;
+}
+
+.sea {
+  background-color: #1C5D99;
+}
+
+.mand {
+  background-color: #F79256;
+}
+
+/*Text Styles*/
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/NdF9MtnOpLzo-noMoG0miPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'), url(https://fonts.gstatic.com/s/robotocondensed/v13/Zd2E9abXLFGSr9G3YK2MsDAdhzWOYhqHvOZMRGaEyPo.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Inconsolata'), url(https://fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCI4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inconsolata', sans-serif;
+}
+
+body, p, li, a {
+  font-family: 'Roboto Condensed', sans-serif;
+  color: red;
+  font-size: 18px;
+}

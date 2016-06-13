@@ -30,3 +30,17 @@ Instead, your "single page app" shows only the section related to the navigation
 You can use data- HTML attributes to associate a content section with a particular tab
 2. Then use jQuery so when the tab is clicked, you hide all the sections, then reveal the associated section only.
 3. As a reader, I want the portfolio to use a nice color scheme, so that it stands out visually.
+
+4th Day User Stories
+
+1. As a developer, I want to use Handlebars for my project template, so that I can include new projects more easily.
+2. As a developer, I want my CSS styles to follow SMACSS organization, so that I know where to look for creating and editing styles.
+3. As a visitor, I want the site to use great typography, so that I have an enjoyable reading experience.
+4. Set up your h1, h2, h3 elements according to a type scale.
+5. Include some good fonts that work well together.
+6. Technical Requirements and Grading Rubric
+
+7. Add Handlebars to your app.
+8. Use web fonts (such as Google fonts) to style all text content in your app.
+9. Organize your CSS code according to SMACSS, with at least a file for base, layout, and modules.
+10. +1 E.C. for using a theme CSS file.

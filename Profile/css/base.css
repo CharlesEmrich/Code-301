@@ -1,35 +1,7 @@
 /*Base rules are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this.*/
-/*https://coolors.co/app/c5d1eb-92afd7-5a7684-395b50-1f2f16*/
-/*https://coolors.co/app/c5d1eb-92afd7-222222-f79256-1c5d99*/
-
-/* Central Color Choices */
-.opal {
-  background-color: #C5D1EB;
-}
-.sky {
-  background-color: #92AFD7;
-}
-
-.jet {
-  background-color: #222222;
-}
-
-.sea {
-  background-color: #1C5D99;
-}
-
-.mand {
-  background-color: #F79256;
-}
-
 /*Global Styling Choices*/
 ul {
   list-style: none;
-}
-
-* {
-  color: #C5D1EB;
-  text-decoration: none;
 }
 
 #facePic {
