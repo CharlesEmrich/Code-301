@@ -44,26 +44,49 @@ Article.loadAll = function(rawData) {
 // This function will retrieve the data from either a local or remote source,
 // and process it, then hand off control to the View.
 Article.fetchAll = function() {
-  if (localStorage.rawData) {
-    // When rawData is already in localStorage,
-    // we can load it by calling the .loadAll function,
-    // and then render the index page (using the proper method on the articleView object).
-    Article.loadAll(//TODO: What do we pass in here to the .loadAll function?
-    );
-    articleView.initIndexPage(); //TODO: Change this fake method call to the correct one that will render the index page.
-  } else {
-    // TODO: When we don't already have the rawData in local storage, we need to get it from the JSON file,
-    //       which simulates data on a remote server. Run live-server or pushstate-server!
-    //       Please do NOT browse to your HTML file(s) using a "file:///" link. RUN A SERVER INSTEAD!!
+  var jqXHR = $.ajax({
+    method: 'HEAD',
+    url: 'data/hackerIpsum.json',
+    success: function () {
+      var remoteeTag = jqXHR.getResponseHeader('ETag');
+      console.log('local eTag established.');
+      if (localStorage.rawData && localStorage.eTag === JSON.stringify(remoteeTag)) {
+        console.log('loading from localStorage');
+        // When rawData is already in localStorage,
+        // we can load it by calling the .loadAll function,
+        // and then render the index page (using the proper method on the articleView object).
+        Article.loadAll(JSON.parse(localStorage.getItem('rawData'))//DONE: What do we pass in here to the .loadAll function?
+      );
+        articleView.initIndexPage(); //DONE: Change this fake method call to the correct one that will render the index page.
+      } else {
+        console.log('loading from JSON');
+      // DONE: When we don't already have the rawData in local storage, we need to get it from the JSON file,
+      //       which simulates data on a remote server. Run live-server or pushstate-server!
+      //       Please do NOT browse to your HTML file(s) using a "file:///" link. RUN A SERVER INSTEAD!!
 
-    // 1. Retrieve the JSON file from the server with AJAX (which jQuery method is best for this?),
-    $.getJSON('data/ipsumArticles.json', function(data) {
-      // 2. Store the resulting JSON data with the .loadAll method,
-      Article.loadAll(data);
-      // 3. Cache the data in localStorage so next time we won't enter this "else" block (avoids hitting the server),
-      localStorage.setItem('articleJSON',JSON.stringify(data));
-      // 4. Render the index page (perhaps with an articleView method?).
-      articleView.initIndexPage();
-    });
-  }
+      // 1. Retrieve the JSON file from the server with AJAX (which jQuery method is best for this?),
+        $.getJSON('data/ipsumArticles.json', function(data) {
+        // 2. Store the resulting JSON data with the .loadAll method,
+          Article.loadAll(data);
+        // 3. Cache the data in localStorage so next time we won't enter this "else" block (avoids hitting the server),
+          localStorage.setItem('rawData', JSON.stringify(data));
+        // 3.5 Get and store article file eTag
+          ajaxTest();
+        // 4. Render the index page (perhaps with an articleView method?).
+          articleView.initIndexPage();
+        });
+      }
+    }
+  });
+};
+
+function ajaxTest() {
+  var jqXHR = $.ajax({
+    method: 'HEAD',
+    url: 'data/hackerIpsum.json',
+    success: function () {
+      console.log(jqXHR.getResponseHeader('ETag'));
+      localStorage.setItem('eTag', JSON.stringify(jqXHR.getResponseHeader('ETag')));
+    }
+  });
 };
