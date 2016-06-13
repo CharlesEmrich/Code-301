@@ -1,7 +1,3 @@
-projects.forEach(function(a) {
-  $('#portfolio').append(a.toHTML());
-});
-
 var initView = function() { //Initialize view state and set event listeners.
   var tabContent = $('.tab-content'); //cache jQ
   tabContent.hide(); //Hide all tabs
@@ -15,4 +11,7 @@ var initView = function() { //Initialize view state and set event listeners.
 //Initialize
 $(function() {
   initView();
+  projects.forEach(function(a) {
+    $('#portfolio').append(a.toHTML());
+  });
 });

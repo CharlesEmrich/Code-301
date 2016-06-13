@@ -1,7 +1,7 @@
 //Build Project Sections
 var projects = [];
-var template = $('#project-template');
-var compiledTemplate = Handlebars.compile(template);
+// var template = $('#project-template').text();
+// var compiledTemplate = Handlebars.compile(template);
 // var template = Handlebars.compile($('#project-template').html()); //Can I compress the first two steps of Handlebars like this?
 
 function Project (keys) {
@@ -13,7 +13,9 @@ function Project (keys) {
 }
 
 Project.prototype.toHTML = function() {
-  return this.compiledTemplate();
+  var template = Handlebars.compile($('#project-template').text());
+  console.log(this);
+  return template(this);
 };
 
 if (typeof rawProjects !== 'undefined') {
@@ -26,6 +28,7 @@ if (typeof rawProjects !== 'undefined') {
   });
 }
 
-projects.forEach(function(a) {
-  $('#portfolio').append(a.toHTML());
-});
+// projects.forEach(function(a) {
+//   $('#portfolio').append(a.toHTML());
+// });
+// Should this be in here or in view?
