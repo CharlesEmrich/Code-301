@@ -17,7 +17,7 @@ Article.all = [];
 Article.prototype.toHtml = function() {
   var template = Handlebars.compile($('#article-template').text());
 
-  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn)) / 60 / 60 / 24 / 1000);
   this.publishStatus = this.publishedOn ? 'published ' + this.daysAgo + ' days ago' : '(draft)';
   this.body = marked(this.body);
 
@@ -50,7 +50,7 @@ Article.fetchAll = function() {
     // and then render the index page (using the proper method on the articleView object).
     Article.loadAll(//TODO: What do we pass in here to the .loadAll function?
     );
-    articleView.someFunctionToCall/*()*/; //TODO: Change this fake method call to the correct one that will render the index page.
+    articleView.initIndexPage(); //TODO: Change this fake method call to the correct one that will render the index page.
   } else {
     // TODO: When we don't already have the rawData in local storage, we need to get it from the JSON file,
     //       which simulates data on a remote server. Run live-server or pushstate-server!
@@ -63,5 +63,6 @@ Article.fetchAll = function() {
     // 3. Cache the data in localStorage so next time we won't enter this "else" block (avoids hitting the server),
 
     // 4. Render the index page (perhaps with an articleView method?).
+    articleView.initIndexPage();
   }
 };
