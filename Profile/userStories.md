@@ -33,11 +33,11 @@ You can use data- HTML attributes to associate a content section with a particul
 
 4th Day User Stories
 
-1. As a developer, I want to use Handlebars for my project template, so that I can include new projects more easily.
-2. As a developer, I want my CSS styles to follow SMACSS organization, so that I know where to look for creating and editing styles.
-3. As a visitor, I want the site to use great typography, so that I have an enjoyable reading experience.
-4. Set up your h1, h2, h3 elements according to a type scale.
-5. Include some good fonts that work well together.
+1. As a developer, I want to use Handlebars for my project template, so that I can include new projects more easily. YEP
+2. As a developer, I want my CSS styles to follow SMACSS organization, so that I know where to look for creating and editing styles. YEP
+3. As a visitor, I want the site to use great typography, so that I have an enjoyable reading experience. YEP
+4. Set up your h1, h2, h3 elements according to a type scale. YEP
+5. Include some good fonts that work well together. YEP
 6. Technical Requirements and Grading Rubric
 
 7. Add Handlebars to your app.

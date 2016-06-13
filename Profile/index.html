@@ -11,21 +11,20 @@
     <link rel="stylesheet" href="css/state.css">
     <link rel="stylesheet" href="css/theme.css">
     <!-- Templates -->
-    <script type="text/x-handlebars">
-      <article id="project-template">
+    <script id="project-template" type="text/x-handlebars">
+      <article>
         <img src="{{img}}" class="folioPic"/>
         <h2 class="folioName"> {{name}} </h2>
         <div>
-        <a class="repoUrl" href="{{repo}}"> GHICON </a>
-        <p class="date"> {{date}} </p>
-        <p class="folioDesc"> {{desc}}</p>
-      </div>
-
-      <!-- Fonts -->
-      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-      <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+            <a class="repoUrl" href="{{repo}}"> GHICON </a>
+            <p class="date"> {{date}} </p>
+            <p class="folioDesc"> {{desc}}</p>
+        </div>
       </article>
     </script>
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   </head>
   <body class="jet">
     <header class="sky">
