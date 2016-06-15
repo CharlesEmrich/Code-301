@@ -71,6 +71,7 @@ Article.fetchAll = function() {
         // 3. Cache the data in localStorage so next time we won't enter this "else" block (avoids hitting the server),
           localStorage.setItem('rawData', JSON.stringify(data));
         // 3.5 Get and store article file eTag
+          // localStorage.setItem('eTag', <.ajaxFetchETAG> );
           ajaxTest();
         // 4. Render the index page (perhaps with an articleView method?).
           articleView.initIndexPage();
