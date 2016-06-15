@@ -1,8 +1,4 @@
 $(function() {
-
-  //Build Project Sections
-  var projects = [];
-
   function Project (keys) {
     this.name = keys.name;
     this.date = new Date(keys.date);
@@ -21,16 +17,18 @@ $(function() {
     url: 'data/portfolioData.json',
     success: function(data) { //TODO: Check this against syntax in Duckett. Amend and fix. Particularly line 24.
       console.log('loading JSON');
-      var rawProjects = JSON.parse(data);
-      if (typeof rawProjects !== 'undefined') {
-        rawProjects.sort(function(a,b) {
+      var projects = [];
+      // var rawProjects = JSON.parse(data);
+      if (typeof data !== 'undefined') {
+        data.sort(function(a,b) {
           return (new Date(b.date)) - (new Date(a.date));
         });
 
-        rawProjects.forEach(function(ele) {
+        data.forEach(function(ele) {
           projects.push(new Project(ele));
         });
-      }
+      };
+      render(projects);
     }});
 }
 );
