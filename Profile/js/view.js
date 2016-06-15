@@ -12,7 +12,7 @@ var initView = function() { //Initialize view state and set event listeners.
 //Initialize
 $(function() {
   initView();
-  projects.forEach(function(a) {
+  projects.forEach(function(a) { //TODO:this line needs to run after asynch stuff in model finishes. Best practices?
     $('#portfolio').append(a.toHTML());
   });
 });
