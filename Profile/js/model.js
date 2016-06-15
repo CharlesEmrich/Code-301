@@ -13,8 +13,9 @@ function Project (keys) {
 }
 
 Project.prototype.toHTML = function() {
-  var template = Handlebars.compile($('#project-template').text());
-  console.log(this);
+  var template = Handlebars.compile($('#project-template').text()); //Examples use .html here, but I get errors when I do that.
+  // console.log(this);
+  // console.log(typeof(template(this)));
   return template(this);
 };
 

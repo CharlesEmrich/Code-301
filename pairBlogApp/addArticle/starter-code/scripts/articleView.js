@@ -115,7 +115,7 @@ articleView.create = function(e) {
   // TODO: Use our interface to the Handblebars template to put this new article into the DOM:
 
   var handleTemplate = articleView.compiledTemplate(articleView);
-
+  $('#articles').html(handleTemplate);
   // TODO: Activate the highlighting of any code blocks:
 
   $('.article-body').find('pre code').each(function(i, block) {

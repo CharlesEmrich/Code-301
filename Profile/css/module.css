@@ -9,19 +9,22 @@ nav {
 
 /*Portfolio Item Styling*/
 .folioItem {
-
 }
 
 .folioName {
   width: 60%;
   font-size: 6rem;
-  letter-spacing: -.5rem;
+  letter-spacing: -.2rem;
   display: inline-block;
   margin: auto auto 0px auto;
 }
 
 .folioDesc {
   margin: .1rem auto 0px auto;
+}
+
+.repoUrl {
+  display: inline;
 }
 
 /*Social Media Contact Styling*/
