@@ -1,0 +1,27 @@
+/*Modules are the reusable, modular parts of our design. They are the callouts, the sidebar sections, the product lists and so on.*/
+
+/*Portfolio Item Styling*/
+.folioItem {
+}
+
+.folioName {
+  width: 60%;
+  font-size: 6rem;
+  letter-spacing: -.2rem;
+  display: inline-block;
+  margin: auto auto 0px auto;
+}
+
+.folioDesc {
+  margin: .1rem auto 0px auto;
+}
+
+.repoUrl {
+  display: inline;
+}
+
+/*Social Media Contact Styling*/
+
+#findMe > ul > li {
+  display: inline-block;
+}

@@ -1,0 +1,27 @@
+/*Layout rules divide the page into sections. Layouts hold one or more modules together.*/
+/*Header Styling*/
+header {
+  width: 62.5%;
+  height: 22.22%;
+}
+
+
+/*Nav Styling*/
+nav {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 22.22%;
+  width: 25%;
+}
+
+#content {
+  position: relative;
+  top: 27.5%;
+}
+
+section {
+  width: 100%;
+  margin: 2.5%;
+  display: flex;
+}
