@@ -1,4 +1,4 @@
-var p = document.querySelector('p');
+var p = $('p');
 
 function setRouteMappings() {
   page.base('/');
