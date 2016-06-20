@@ -1,4 +1,5 @@
 var p = $('p');
+var artDiv = $('.articles');
 
 function setRouteMappings() {
   page.base('/');
@@ -14,17 +15,22 @@ function setRouteMappings() {
 }
 
 function articles() { //Show articles
+  artDiv.show();
+  p.text('viewing articles');
 }
-function index() { p.text('viewing index (home)'); }
-function about() { p.text('viewing about'); }
+function index() { p.text('viewing index (home)'); artDiv.hide();}
+function about() { p.text('viewing about'); artDiv.hide();}
 function contact(ctx) {
-  p.textContent = 'viewing contact ' + (ctx.params.contactName || '');
+  p.text('viewing contact ' + (ctx.params.contactName || ''));
+  artDiv.hide();
 }
 function notfound() {
-  p.innerHTML = '<h3>OMG!</h3><p>The page at "'
+  p.html('<h3>OMG!</h3><p>The page at "'
               + location.hostname + location.pathname + location.search
               + '" can\'t be found (like a bridge over troubled water, ya\' know)!</p>'
-              + '<img src="lost.jpg"></img>';
+              + '<img src="lost.jpg"></img>'
+);
+  artDiv.hide();
 }
 function articulate(a) {
   var template = $('#article-template').html();
@@ -33,8 +39,8 @@ function articulate(a) {
     // console.log(ele);
     ele.body = marked(ele.body);
     var newArt = compTemplate(ele);
-    $('.articles').append(newArt);
-    $('.articles').find('pre code').each(function(i, block) {
+    artDiv.append(newArt);
+    artDiv.find('pre code').each(function(i, block) {
       hljs.highlightBlock(block);
     });
     // console.log(compTemplate(a));
