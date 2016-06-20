@@ -7,11 +7,13 @@ function setRouteMappings() {
   page('about', about);
   page('contact', contact);
   page('contact/:contactName', contact);
+  page('articles', articles);
   page('*', notfound); // catch-all
 
   page();
 }
-
+function articles() { //Show articles
+}
 function index() { p.text('viewing index (home)'); }
 function about() { p.text('viewing about'); }
 function contact(ctx) {
