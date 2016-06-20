@@ -48,9 +48,24 @@ You can use data- HTML attributes to associate a content section with a particul
 Class 06 Assignment
 1. As a developer, I want to store my project data in a .json file, so that I can keep it organized.
 2. As a developer, I want to retrieve that source data file asynchronously, so that my app logic gets the data just when I need it.
-Technical Requirements and Grading Rubric
 
-Transfer your collection of data over to a .json file, replacing your original file.
-Continue to follow good SMACSS principles.
-Be sure to use the correct jQuery method for each AJAX call.
-Be thoughtful when functions are executed asynchronously. This is a major source of bugs!
+Class 07 Assignment
+1. Eliminate all for loops. DONE
+2. Use .map() where you are transforming one collection into another. DONE
+3. Enclose the contents of each script file in an IIFE that exports any interface methods. Not sure what that second part means. Done, unless we have to nest everything inside ready functions.
+4. Use templates to avoid repetition of HTML structure. Use .map() to convert collections of data into collections of DOM nodes.
+5. Think of a useful way to use .reduce(). Maybe you want to put some "fun facts and stats" in your footer, or on a separate page, like funStats.html?
+
+09 Class Assignment
+1. Make sure your code passes ESLint. DONE
+2. Perform a self code review, in GitHub, that includes comments (or GitHub Issues) in the areas that you will refactor.
+Your comments (or Issues) should include high level technical details about how the related code should be refactored.
+Use FP concepts and JS array methods to organize and/or manipulate your data.
+Ensure that your JS modules are written in an OOP fashion and are wrapped in an IFFE in order to expose the module to the 'window' object.
+As usual, work on a branch, and submit your final PR in Canvas.
+Include a summary of your experience as a PR comment.
+Have fun, be creative, and take your code to the next level!
+
+(function(){ /* code */ }()); // Crockford recommends this one
+06.
+(function(){ /* code */ })(); // But this one works just as well
