@@ -44,3 +44,13 @@ You can use data- HTML attributes to associate a content section with a particul
 8. Use web fonts (such as Google fonts) to style all text content in your app.
 9. Organize your CSS code according to SMACSS, with at least a file for base, layout, and modules.
 10. +1 E.C. for using a theme CSS file.
+
+Class 06 Assignment
+1. As a developer, I want to store my project data in a .json file, so that I can keep it organized.
+2. As a developer, I want to retrieve that source data file asynchronously, so that my app logic gets the data just when I need it.
+Technical Requirements and Grading Rubric
+
+Transfer your collection of data over to a .json file, replacing your original file.
+Continue to follow good SMACSS principles.
+Be sure to use the correct jQuery method for each AJAX call.
+Be thoughtful when functions are executed asynchronously. This is a major source of bugs!

@@ -1,4 +1,4 @@
-var initView = function() { //Initialize view state and set event listeners.
+function initView() { //Initialize view state and set event listeners.
   var tabContent = $('.tab-content'); //cache jQ
   tabContent.hide(); //Hide all tabs
   $('#portfolio').show(); //Show portfolio by default
@@ -9,10 +9,14 @@ var initView = function() { //Initialize view state and set event listeners.
   });
 };
 
-//Initialize
-$(function() {
-  initView();
+function render(projects) {
+  // console.log('running render()');
   projects.forEach(function(a) {
+    console.log('appending ' + a);
     $('#portfolio').append(a.toHTML());
   });
+}
+
+$(function() {
+  initView();
 });
