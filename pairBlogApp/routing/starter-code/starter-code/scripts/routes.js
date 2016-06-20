@@ -4,6 +4,7 @@
 function setRouteMappings() {
   page.base('/');
 
+// SANDBOX 1: Experimented with various ways of calling the artcilesController function, including use of Window, tempporarily pulling logic out into individual functions, etc.
   page('', articlesController.index);
   page('about', aboutController.index);
   page('*', notfound);
@@ -11,7 +12,7 @@ function setRouteMappings() {
   page();
   console.log('\n* routes.js loaded *\n\n'); // Debug -- verify this in the console when the page (re)loads.
 }
-
+// SANDBOX 2: experimented with pushstate-server behaviour to clarify how it handles a 404/page not found url
 function notfound() {
   console.log('not found');
   $('.tab-content').hide();
