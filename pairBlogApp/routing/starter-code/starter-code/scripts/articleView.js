@@ -48,17 +48,9 @@
     });
   };
 
-  // TODO: Once your code that uses page.js to properly map "/" and "/about" routes,
+  // DONE: Once your code that uses page.js to properly map "/" and "/about" routes,
   //       delete articleView.handleMainNav(). Say "bye" to click handlers in this app!
-  // TODO: Remove all calls to this function, in all files for this app.
-  articleView.handleMainNav = function() {
-    $('.main-nav').on('click', '.tab', function(e) {
-      $('.tab-content').hide();
-      $('#' + $(this).data('content')).fadeIn();
-    });
-
-    $('.main-nav .tab:first').click();
-  };
+  // DONE: Remove all calls to this function, in all files for this app.
 
   articleView.setTeasers = function() {
     $('.article-body *:nth-of-type(n+2)').hide();
@@ -113,7 +105,6 @@
     articleView.populateFilters();
     articleView.handleCategoryFilter();
     articleView.handleAuthorFilter();
-//  articleView.handleMainNav();
     articleView.setTeasers();
   };
 
