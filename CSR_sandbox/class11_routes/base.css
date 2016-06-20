@@ -1,0 +1,16 @@
+nav {
+  color: red;
+}
+
+nav>ul>li {
+  display: inline-block;
+  list-style: none;
+}
+
+nav>ul>li>a {
+  text-decoration: none;
+}
+
+.articles {
+  display: none;
+}

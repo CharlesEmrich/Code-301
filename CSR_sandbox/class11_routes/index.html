@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini-app: page.js demo</title>
+    <script src="/page.js"></script>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <link href="base.css" type="text/css" rel="stylesheet" />
+    <script src="marked.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+    <base href="/" >
+    <script id="article-template" type="text/x-handlebars-template">
+      <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+          <header>
+            <h1>{{title}}</h1>
+            <div class="byline">
+              By <address><a href="{{authorUrl}}">{{author}}</a></address>
+              {{publishStatus}}
+            </div>
+          </header>
+          <section class="article-body">{{{body}}}</section>
+        <a href="#" class="read-on">Read on &rarr;</a>
+      </article>
+    </script>
+  </head>
+  <body>
+    <h1>Mini-app: page.js demo</h1>
+      <nav>
+        <ul>
+          <li><a href="">home</a></li>
+          <li><a href="/">/</a></li>
+          <li><a href="about">/about</a></li>
+          <li><a href="contact">/contact</a></li>
+          <li><a href="contact/me">/contact/me</a></li>
+          <li><a href="contact/you">/contact/you</a></li>
+          <li><a href="#whoop">#whoop</a></li>
+          <li><a href="articles">articles</a></li>
+          <li><a href="not-found?foo=bar">/not-found</a></li>
+        </ul>
+      </nav>
+
+    <p></p>
+
+    <section class="articles"></section>
+
+    <script src="app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
