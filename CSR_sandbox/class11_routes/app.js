@@ -12,8 +12,8 @@ function setRouteMappings() {
   page();
 }
 
-function index() { p.textContent = 'viewing index (home)'; }
-function about() { p.textContent = 'viewing about'; }
+function index() { p.text('viewing index (home)'); }
+function about() { p.text('viewing about'); }
 function contact(ctx) {
   p.textContent = 'viewing contact ' + (ctx.params.contactName || '');
 }
