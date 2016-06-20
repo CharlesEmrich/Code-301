@@ -31,8 +31,12 @@ function articulate(a) {
   var compTemplate = Handlebars.compile(template);
   a.map(function(ele) {
     // console.log(ele);
+    ele.body = marked(ele.body);
     var newArt = compTemplate(ele);
     $('.articles').append(newArt);
+    $('.articles').find('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
     // console.log(compTemplate(a));
   });
 }

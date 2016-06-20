@@ -2,8 +2,11 @@ nav {
   color: red;
 }
 
-li {
+nav>ul>li {
   display: inline-block;
   list-style: none;
+}
+
+nav>ul>li>a {
   text-decoration: none;
 }
