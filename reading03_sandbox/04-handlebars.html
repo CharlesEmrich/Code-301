@@ -23,6 +23,7 @@
     var appTemplate = $('#hello').html()
     var compiledTemplate = Handlebars.compile(appTemplate); //Now, rather than defining our own compile() function, we're actually just going to call Handlebars' built-in one.Notably, this returns a function, which means...
     var html = compiledTemplate(data); // ... that we'll invoke compiledTemplate() with the replacement data object as an argument.
+console.log(typeof(compiledTemplate(data)));
     $('#app').append(html); //then we append the result.
   </script>
 

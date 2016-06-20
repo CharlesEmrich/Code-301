@@ -21,3 +21,36 @@ Apply sort function to rawData per pair lab
 3. As a visitor, I want relative timestamps on projects to give me a idea of how many days ago something was created.
 
 We literally don't know how to do this kind of date math yet? Great!
+
+3rd Day User Stories
+
+1. As the creator, I want the Home and About nav links to act as tabs, so my story is revealed FAST.
+This means your links do NOT navigate to a new page.
+Instead, your "single page app" shows only the section related to the navigation tab that is selected.
+You can use data- HTML attributes to associate a content section with a particular tab
+2. Then use jQuery so when the tab is clicked, you hide all the sections, then reveal the associated section only.
+3. As a reader, I want the portfolio to use a nice color scheme, so that it stands out visually.
+
+4th Day User Stories
+
+1. As a developer, I want to use Handlebars for my project template, so that I can include new projects more easily. YEP
+2. As a developer, I want my CSS styles to follow SMACSS organization, so that I know where to look for creating and editing styles. YEP
+3. As a visitor, I want the site to use great typography, so that I have an enjoyable reading experience. YEP
+4. Set up your h1, h2, h3 elements according to a type scale. YEP
+5. Include some good fonts that work well together. YEP
+6. Technical Requirements and Grading Rubric
+
+7. Add Handlebars to your app.
+8. Use web fonts (such as Google fonts) to style all text content in your app.
+9. Organize your CSS code according to SMACSS, with at least a file for base, layout, and modules.
+10. +1 E.C. for using a theme CSS file.
+
+Class 06 Assignment
+1. As a developer, I want to store my project data in a .json file, so that I can keep it organized.
+2. As a developer, I want to retrieve that source data file asynchronously, so that my app logic gets the data just when I need it.
+Technical Requirements and Grading Rubric
+
+Transfer your collection of data over to a .json file, replacing your original file.
+Continue to follow good SMACSS principles.
+Be sure to use the correct jQuery method for each AJAX call.
+Be thoughtful when functions are executed asynchronously. This is a major source of bugs!

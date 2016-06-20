@@ -9,42 +9,57 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/module.css">
     <link rel="stylesheet" href="css/state.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <!-- Templates -->
+    <script id="project-template" type="text/x-handlebars">
+      <article>
+        <img src="{{img}}" class="folioPic"/>
+        <h2 class="folioName"> {{name}} </h2>
+        <div>
+            <a class="repoUrl" href="{{repo}}"> GH </a>
+            <p class="date"> {{date}} </p>
+            <p class="folioDesc"> {{desc}}</p>
+        </div>
+      </article>
+    </script>
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   </head>
-  <body>
-    <header>
-      <img id="facePic" src="http://placehold.it/250x250"/>
+  <body class="jet">
+    <header class="sky">
+      <img id="facePic" src="http://placehold.it/50x50"/>
 <div id="topPlate">
       <h1> Charles Emrich </h1>
       <h3> Personal Summary </h3>
 </div>
     </header>
-    <nav>
-      <ul> Menu
-        <li>About Me</li>
-        <li>Products</li>
-        <li>Find Me</li>
+    <nav class="main-nav sea">
+      <ul>
+        <li class="tab" data-content="about"><a href="#">About</a></li>
+        <li class="tab" data-content="portfolio"><a href="#">Works</a></li>
+        <li><a href="#findMe">Contact</a></li>
       </ul>
     </nav>
-    <section id="about">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-    </section>
-    <section id="porfolio">
-      <article class="folioItem template">
-        <img src="http://placehold.it/250x100" class="folioPic"/>
-        <h2 class="folioName"> FolioNomen </h2>
-        <div>
-        <p class="date"> Date </p>
-        <p class="folioDesc"> Folio Project Description Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+      <div id="content">
+          <section class="tab-content" id="about">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+          </section>
+          <section class="tab-content"  id="portfolio">
+          </section>
+          <section id="findMe">
+            <ul>
+              <li><a href="#">gitHub</a></li>
+              <li><a href="#">faceBook</a></li>
+              <li><a href="#">Twitter</a></li>
+            </ul>
+          </section>
       </div>
-      </article>
-    </section>
-    <section id="findMe">
-      <ul>
-        <li>gitHub</li>
-        <li>faceBook</li>
-        <li>Twitter</li>
-      </ul>
-    </section>
-
+ <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+    <script src="js/model.js"></script>
+    <script src="js/view.js"></script>
+    <script src="js/control.js"></script>
   </body>
 </html>
