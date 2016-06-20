@@ -33,6 +33,7 @@ function notfound() {
   artDiv.hide();
 }
 function articulate(a) {
+  console.log('JSON Successssssss');
   var template = $('#article-template').html();
   var compTemplate = Handlebars.compile(template);
   a.map(function(ele) {
