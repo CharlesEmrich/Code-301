@@ -1,13 +1,16 @@
 (function(module) {
   var articlesController = {};
 
-  // TODO: Create the `articles` table when the controller first loads, with
+  // DONE: Create the `articles` table when the controller first loads, with
   //       code that was previously in index.html.
-  // TODO: Make the function below fetch and render the articles. It should look
+  // DONE: Make the function below fetch and render the articles. It should look
   //       very similiar to code you wrote before.
-  // TODO: Hide the main section elements; reveal the #articles section:
+  // DONE: Hide the main section elements; reveal the #articles section:
   articlesController.index = function() {
-
+    Article.createTable();
+    Article.fetchAll(articleView.initIndexPage);
+    $('.tab-content').hide();
+    $('#articles').show();
   };
 
   module.articlesController = articlesController;
