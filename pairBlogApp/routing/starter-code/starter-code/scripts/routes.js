@@ -6,9 +6,15 @@ function setRouteMappings() {
 
   page('', articlesController.index);
   page('about', aboutController.index);
+  page('*', notfound);
 
   page();
   console.log('\n* routes.js loaded *\n\n'); // Debug -- verify this in the console when the page (re)loads.
+}
+
+function notfound() {
+  console.log('not found');
+  $('.tab-content').hide();
 }
 
 // DONE: What function do we call to activate page.js? Call it to run that code right here.
