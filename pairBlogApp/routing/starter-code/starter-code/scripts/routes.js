@@ -7,6 +7,7 @@ function setRouteMappings() {
 // SANDBOX 1: Experimented with various ways of calling the artcilesController function, including use of Window, tempporarily pulling logic out into individual functions, etc.
   page('', articlesController.index);
   page('about', aboutController.index);
+  page('admin', statsController.index);
   page('*', notfound);
 
   page();
