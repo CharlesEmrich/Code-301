@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> An Assortment </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/module.css">
+    <link rel="stylesheet" href="css/state.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <!-- Templates -->
+    <script id="project-template" type="text/x-handlebars">
+      <article>
+        <img src="{{img}}" class="folioPic"/>
+        <h2 class="folioName"> {{name}} </h2>
+        <div>
+            <a class="repoUrl" href="{{repo}}"> GH </a>
+            <p class="date"> {{date}} </p>
+            <p class="folioDesc"> {{desc}}</p>
+        </div>
+      </article>
+    </script>
+    <!-- Fonts -->
+    <!-- FONTS GO HERE -->
+  </head>
+  <body>
+    <header>
+      <img src="http://placehold.it/75x75"/>
+      <div>
+        <h1> Charles Emrich </h1>
+        <h3> Inexplicably Present </h3>
+      </div>
+    </header>
+
+    <nav class="main-nav">
+      <ul>
+        <li class="tab" data-content="about"><a href="#">About</a></li>
+        <li class="tab" data-content="portfolio"><a href="#">Works</a></li>
+        <li><a href="#findMe">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div id="content">
+      <section id="findMe">
+        <ul>
+          <li><a href="https://github.com/charlesemrich">gitHub</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </section>
+      <section class="tab-content" id="about">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+      </section>
+      <section class="tab-content"  id="portfolio">
+      </section>
+    </div>
+
+    <!-- Scripts -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+   <script src="js/model.js"></script>
+   <script src="js/view.js"></script>
+   <script src="js/control.js"></script>
+  </body>
+</html>
