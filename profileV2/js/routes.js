@@ -1,4 +1,4 @@
 page('/', controller.index);
-page('/about', controller.about);
+page('/works', controller.works);
 
 page();

@@ -8,18 +8,18 @@
 
   Project.all = [];
 
-  Project.prototype.render = function(project) {
-    var template = Handlebars.compile($('#project-template').text()); //Examples use .html here, but I get errors when I do that.
+  // Project.prototype.render = function(project) {
+  //   var template = Handlebars.compile($('#project-template').text()); //Examples use .html here, but I get errors when I do that.
+  //
+  //   // TODO: Implement DaysAgo here if we're doing that.
+  //
+  //   return template(project);
+  // };
 
-    // TODO: Implement DaysAgo here if we're doing that.
-
-    return template(project);
-  };
-
-  Project.prototype.requestRepos = function(callback) {
+  Project.requestRepos = function(callback) {
     $.ajax({
       method: 'GET',
-      url: '', //github API url
+      url: '', //TODO: github API url
       success: function(data) {
         if (typeof data !== 'undefined') {
           // data.sort(function(a,b) {

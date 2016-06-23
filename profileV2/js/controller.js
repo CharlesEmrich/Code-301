@@ -1,8 +1,14 @@
 (function(module) {
   var controller = {};
 
-  //TODO: write index function that calls the model function and takes a view function as a callback.
-  //TODO: write an about function that calls requestRepos and takes a view function as a callback.
+  //DONE: write a function that initializes the view on load or clicking "about"
+  controller.index = function() {
+    view.initView();
+  };
+  //DONE: write an works function that calls requestRepos and takes a view function as a callback.
+  controller.works = function() {
+    Project.requestRepos(view.renderPortfolio);
+  };
 
   module.controller = controller;
 })(window);
