@@ -27,6 +27,9 @@
           //   return ; // TODO: figure out how dates are formatting in github's JSON response
           // });
           model.all = data;
+          model.all.map(function(ele) {
+            ele.avatarsrc = 'https://avatars.githubusercontent.com/u/14851269?v=3';
+          }); //This is, admittedly, a test or workaround.
           console.log(model.all);
         }
       }
