@@ -1,4 +1,5 @@
 (function(module) {
+  var model = {};
 //Flexible object contstructor
   // function Article (opts) {
   //   Object.keys(opts).forEach(function(e, index, keys) {
@@ -6,7 +7,7 @@
   //   },this);
   // }
 
-  Project.all = [];
+  model.all = [];
 
   // Project.prototype.render = function(project) {
   //   var template = Handlebars.compile($('#project-template').text()); //Examples use .html here, but I get errors when I do that.
@@ -16,7 +17,7 @@
   //   return template(project);
   // };
 
-  Project.requestRepos = function(callback) {
+  model.requestRepos = function(callback) {
     $.ajax({
       method: 'GET',
       url: '', //TODO: github API url

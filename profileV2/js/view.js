@@ -1,4 +1,5 @@
 (function(module) {
+  var view = {};
   var $tabContent = $('tab-content');
 
   view.initView = function() { //DONE:This function sets initial View State
