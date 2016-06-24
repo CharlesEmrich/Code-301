@@ -1,6 +1,6 @@
 (function(module) {
   var view = {};
-  var $tabContent = $('tab-content');
+  $tabContent = $('tab-content');
 
   view.initView = function() { //DONE:This function sets initial View State
     $tabContent.hide();
@@ -13,7 +13,7 @@
     $('#works').show();
   };
 
-  var render = Handlebars.compile($('#project-template').text());
+  render = Handlebars.compile($('#project-template').text());
 
   //DONE: This function calls portfolio view function above and appends projects to the DOM using render+append.
   view.renderPortfolio = function() {
