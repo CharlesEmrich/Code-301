@@ -13,12 +13,12 @@
     <!-- Templates -->
     <script id="project-template" type="text/x-handlebars">
       <article>
-        <img src="{{img}}" class="folioPic"/>
+        <img src="{{avatarsrc}}" class="folioPic"/>
         <h2 class="folioName"> {{name}} </h2>
         <div>
-            <a class="repoUrl" href="{{repo}}"> GH </a>
-            <p class="date"> {{date}} </p>
-            <p class="folioDesc"> {{desc}}</p>
+            <a class="repoUrl" href="{{svn_url}}"> GH </a>
+            <p class="date"> {{created_at}} </p>
+            <p class="folioDesc"> {{description}}</p>
         </div>
       </article>
     </script>
@@ -53,7 +53,7 @@
       <section class="tab-content" id="about">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
       </section>
-      <section class="tab-content"  id="portfolio">
+      <section class="tab-content"  id="works">
       </section>
     </div>
 
@@ -63,6 +63,7 @@
    <script src="/vendor/js/page.js"></script>
 
    <!-- Scripts -->
+   <script src="/js/token.js"></script>
    <script src="/js/model.js"></script>
    <script src="/js/view.js"></script>
    <script src="/js/controller.js"></script>

@@ -20,13 +20,17 @@
   model.requestRepos = function(callback) {
     $.ajax({
       method: 'GET',
-      url: '', //TODO: github API url
+      url: 'https://api.github.com/user/repos?access_token=' + gitHubToken, //TODO: github API url
       success: function(data) {
         if (typeof data !== 'undefined') {
           // data.sort(function(a,b) {
           //   return ; // TODO: figure out how dates are formatting in github's JSON response
           // });
           model.all = data;
+          model.all.map(function(ele) {
+            ele.avatarsrc = 'https://avatars.githubusercontent.com/u/14851269?v=3';
+          }); //This is, admittedly, a test or workaround.
+          console.log(model.all);
         }
       }
     }).done(callback);
