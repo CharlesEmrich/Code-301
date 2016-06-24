@@ -26,7 +26,7 @@
           // data.sort(function(a,b) {
           //   return ; // TODO: figure out how dates are formatting in github's JSON response
           // });
-          Project.all = data;
+          model.all = data;
         }
       }
     }).done(callback);
