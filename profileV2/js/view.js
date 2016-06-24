@@ -21,7 +21,7 @@
 
     $('#portfolio').append(
       //TODO: It's not clear whether render can process objects as provided by Project.all. Check their structure and the structure of the template.
-      Project.all.map(render)
+      model.all.map(render)
     );
   };
 
