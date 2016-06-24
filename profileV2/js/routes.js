@@ -1,8 +1,8 @@
 function setRouteMappings() {
   console.log('Setting route mappings.');
   page.base('');
-  page('/', controller.index);
-  page('/works', controller.works);
+  page('/', middleware.report, controller.index);
+  page('/works', middleware.report, controller.works);
   page('/about', '/');
 
   page();
