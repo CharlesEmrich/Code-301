@@ -20,7 +20,7 @@
   model.requestRepos = function(callback) {
     $.ajax({
       method: 'GET',
-      url: 'https://api.github.com/user/repos?access_token=' + gitHubToken, //TODO: github API url
+      url: '/github/user/repos',
       success: function(data) {
         if (typeof data !== 'undefined') {
           // data.sort(function(a,b) {

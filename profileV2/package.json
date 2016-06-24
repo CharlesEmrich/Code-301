@@ -1,0 +1,19 @@
+{
+  "name": "first-folio",
+  "version": "1.0.0",
+  "description": "This is an initial stab at a professional portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/charlesemrich/Code-301.git"
+  },
+  "author": "Charles Emrich",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.10"
+  }
+}
