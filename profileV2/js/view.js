@@ -19,6 +19,8 @@
   view.renderPortfolio = function() {
     view.portView();
 
+    console.log(typeof(model.all));
+
     $('#portfolio').append(
       //TODO: It's not clear whether render can process objects as provided by Project.all. Check their structure and the structure of the template.
       model.all.map(render)
