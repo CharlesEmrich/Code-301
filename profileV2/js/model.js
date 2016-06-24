@@ -27,6 +27,7 @@
           //   return ; // TODO: figure out how dates are formatting in github's JSON response
           // });
           model.all = data;
+          console.log(model.all);
         }
       }
     }).done(callback);
